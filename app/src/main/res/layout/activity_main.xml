@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- LinearLayout: A linear layout is a good choice when configuring a simple layout. -->
+
     <LinearLayout
         android:id="@+id/layout_container"
         android:layout_width="match_parent"

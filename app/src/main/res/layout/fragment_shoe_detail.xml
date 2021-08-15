@@ -2,6 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- LinearLayout: A linear layout is a good choice when configuring a simple layout. -->
+
     <data>
 
         <variable
