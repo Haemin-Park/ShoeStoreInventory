@@ -2,6 +2,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="shoe"
+            type="com.example.shoestore.model.Shoe" />
+
+        <variable
+            name="vm"
+            type="com.example.shoestore.ui.viewmodel.ShoeStoreViewModel" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,7 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:text="@={shoe.name}" />
 
         <TextView
             style="@style/bold_20sp"
@@ -34,7 +46,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:text="@={shoe.company}" />
 
         <TextView
             style="@style/bold_20sp"
@@ -47,7 +60,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            android:text="@={shoe.size}" />
 
         <TextView
             android:id="@+id/textView8"
@@ -61,12 +75,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:text="@={shoe.description}" />
 
         <Button
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> vm.addShoe(shoe)}"
             android:text="@string/save" />
 
         <Button

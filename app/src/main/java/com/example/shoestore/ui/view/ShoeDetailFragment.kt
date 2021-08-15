@@ -28,20 +28,15 @@ class ShoeDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnSave.setOnClickListener {
-            findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
-            val name =
-                if (binding.etShoeName.length() != 0) binding.etShoeName.text.toString() else "Default Name"
-            val company =
-                if (binding.etShoeCompany.length() != 0) binding.etShoeCompany.text.toString() else "Default Company"
-            val size =
-                if (binding.etShoeSize.length() != 0) binding.etShoeSize.text.toString() else "Default Size"
-            val description =
-                if (binding.etShoeDescription.length() != 0) binding.etShoeDescription.text.toString() else "Default description"
-            viewModel.addShoe(Shoe(name, company, size, description))
-        }
+        binding.vm = viewModel
+        binding.shoe = Shoe("", "", "", "")
+        viewModel.event.observe(viewLifecycleOwner, {
+            it.getContentIfNotHandled()?.let {
+                findNavController().navigateUp()
+            }
+        })
         binding.btnCancel.setOnClickListener {
-            findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+            findNavController().navigateUp()
         }
     }
 }
