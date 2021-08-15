@@ -7,7 +7,7 @@
     <data>
 
         <variable
-            name="Shoe"
+            name="shoe"
             type="com.example.shoestore.model.Shoe" />
     </data>
 
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:singleLine="true"
-                android:text="@{Shoe.name}"
+                android:text="@{shoe.name}"
                 tools:text="shoe name" />
         </LinearLayout>
 
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:singleLine="true"
-                android:text="@{Shoe.company}"
+                android:text="@{shoe.company}"
                 tools:text="company name" />
         </LinearLayout>
 
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:singleLine="true"
-                android:text="@{String.valueOf(Shoe.size)}"
+                android:text="@{shoe.size}"
                 tools:text="shoe size" />
         </LinearLayout>
 
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:singleLine="true"
-                android:text="@{Shoe.description}"
+                android:text="@{shoe.description}"
                 tools:text="shoe description" />
         </LinearLayout>
 
